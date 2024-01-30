@@ -1,0 +1,141 @@
+PASSENGER COUNT
+IN HTML
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>People entered:</h1>
+        <h2 id="count-el">0</h2>
+        <button id="increment-btn" onclick="increment()">INCREMENT</button>
+        <!-- 2. Create a SAVE button.
+        Set the id to "save-btn" and call the save() function when it's clicked -->
+        <button id="save-btn" onclick="save()">SAVE</button>
+        <script src="index.js"></script>
+    </body>
+</html>
+IN CSS
+body {
+    background-image: url("station.jpg");
+    background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#increment-btn {
+    background: darkred;
+}
+
+#save-btn {
+    background: darkgreen;
+}
+IN JAVA
+let countEl = document.getElementById("count-el")
+let count = 0
+
+function increment() {
+    count = count + 1
+    countEl.innerText = count
+}
+
+// 1. Create a function, save(), which logs out the count when it's called
+
+function save() {
+    console.log(count)
+}
+----------------------------------------------------------------------------
+WORKING WITH STRINGS
+let name = "Beatriz"
+let greeting = "Hi, my name is "
+let myGreeting = greeting + name
+console.log(myGreeting)
+----------------------------------------------------------------------------
+STRINGS
+IN HTML
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="welcome-el"></p>
+        <script src="index.js"></script>
+    </body>
+</html>
+IN JAVA
+// Grab the welcome-el paragraph and store it in a variable called welcomeEl
+let welcomeEl = document.getElementById("welcome-el")
+
+// Create two variables (name & greeting) that contains your name
+// and the greeting we want to render on the page
+
+let name = "Per Harald Borgen"
+let greeting = "Welcome back "
+
+// Render the welcome message using welcomeEl.innerText
+welcomeEl.innerText = greeting + name
+welcomeEl.innerText = welcomeEl.innerText + "👋"
+----------------------------------------------------------------------------
+PREVIOUS ENTRIES (SAVE)
+IN HTML:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>People entered:</h1>
+        <h2 id="count-el">0</h2>
+        <button id="increment-btn" onclick="increment()">INCREMENT</button>
+        <button id="save-btn" onclick="save()">SAVE</button>
+        <p id="save-el">Previous entries: </p>
+        <script src="index.js"></script>
+    </body>
+</html>
+IN CSS:
+THE SAME
+IN JAVA:
+// 1. Grab the save-el paragrah and store it in a variable called saveEl
+let saveEl = document.getElementById("save-el")
+let countEl = document.getElementById("count-el")
+let count = 0
+
+
+function increment() {
+    count += 1
+    countEl.innerText = count
+}
+
+
+
+function save() {
+    // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+    // 3. Render the variable in the saveEl using innerText
+    // NB: Make sure to not delete the existing content of the paragraph
+    let newCount = count + " - "
+    saveEl.textContent += newCount    
+    saveEl.innerText += ' ' + newCount
+    //countEl.textContent = 0 (set count to 0 on screen)
+    //count = 0 (starts again the counting)
+}
+----------------------------------------------------------------------------
