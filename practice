@@ -1,0 +1,194 @@
+// Create a person object that contains three keys: name, age, and county.
+// Use yourself as an example to set the values for name, age, and country
+
+// Create a function, logData(), that uses the person object to create a
+// string in the following format: 
+// "Per is 35 years old and lives in Norway"
+
+// Call the logData() function to verify that it works
+
+let person = {
+    name: "Beatriz",
+    age: 19,
+    country: "Portugal"
+}
+function logData() {
+    return person.name + " is " + person.age + " years old and lives in " + person.country
+}
+console.log(logData())
+------------------------------------------------------------------------------
+IF/ELSE STATEMENT
+let age = 15
+
+// less than 6 years old -> free
+// 6 to 17 years old     -> child discount
+// 18 to 26 years old    -> student discount
+// 27 to 66 years old    -> full price
+// over 66 years old     -> senior citizen discount
+
+// Create a conditional statement (if/else/else if) that logs out the discount
+// the passenger will get based upon the value of the age variable
+
+if (age < 6) {
+    console.log("free")
+} else if (age < 18) {
+    console.log("child discount")
+} else if (age < 27) {
+    console.log("student discount")    
+} else if (age < 67) {
+    console.log("full price")
+} else {
+    console.log("senior citizen discount")
+}
+------------------------------------------------------------------------------
+FOR LOOP
+let largeCountries = ["China","India","USA","Indonesia","Pakistan"]
+
+/* Use a for loop to log the following to the console:
+
+The 5 largest countries in the world:
+- China
+- India
+- United States
+- Indinesia
+- Pakistan
+*/
+console.log("The 5 largest countries in the world:")
+for (let i = 0; i < largeCountries.length; i += 1) {
+    console.log(largeCountries[i])
+}
+------------------------------------------------------------------------------
+PUSH, POP, UNSHIFT, SHIFT
+let largeCountries = ["Tuvalu","India","USA","Indonesia","Monaco"]
+
+// You need to help me fixup the largeCountries array so that 
+// China and Pakistan are added back into their respective places
+
+// Use push() & pop() and their counterparts unshift() & shift()
+// Google how to use unshift() and shift()
+largeCountries.pop()
+largeCountries.shift()
+largeCountries.push("Pakistan")
+largeCountries.unshift("China")
+
+console.log(largeCountries)
+------------------------------------------------------------------------------
+LOGICAL OPERATORS
+let dayOfMonth = 13
+let weekday = "Friday"
+
+// If it is Friday the 13th, log out this spooky face: 😱
+// Use the logical "AND operator" -> &&
+
+if (dayOfMonth === 13 && weekday === "Friday") {
+    console.log("😱")
+}
+------------------------------------------------------------------------------
+ROCK, PAPER, SCISSORS
+let hands = ["rock", "paper", "scissor"]
+
+// Create a function that returns a random item from the array
+
+function getHand() {
+    let randomIndex = Math.floor( Math.random() * 3)
+    return hands[randomIndex]
+}
+
+console.log( getHand() )
+------------------------------------------------------------------------------
+EMOJI FIGHTER
+CSS:
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    /* background: linear-gradient(white, gray); */
+    height: 100vh;
+    color: #e98a1d;
+
+}
+
+h1 {
+    text-shadow: 0px 3px 0px black;
+    line-height: 24px;
+    transform: rotate(-9deg);
+}
+
+#stage {
+    width: 100%;
+    height: 60px;
+    padding: 30px 0;
+    font-size: 50px;
+    margin: 0;
+}
+
+button {
+    margin: 20px;
+    cursor: pointer;
+    border: 0;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #e98a1d;
+    color: white;
+    font-family: inherit;
+    font-size: 20px
+}
+HTML:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Emoji<br>Fighter</h1>
+        <div id="stage"></div>
+        <button id="fightButton">Pick Fighters!</button>
+        <script src="index.js"></script>
+    </body>
+</html>
+JAVA:
+let fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"]
+
+let stageEl = document.getElementById("stage")
+let fightButton = document.getElementById("fightButton")
+
+fightButton.addEventListener("click", function() {
+    // Challenge:
+    // When the user clicks on the "Pick Fighters" button, pick two random 
+    // emoji fighters and display them as i.e. "🦀 vs 🐢" in the "stage" <div>.
+    let randomFighter1 = fighters[Math.floor( Math.random() * fighters.length )]
+    let randomFighter2 = fighters[Math.floor( Math.random() * fighters.length )]
+    stageEl.textContent = randomFighter1 + " vs " + randomFighter2
+})
+(NOTE)
+//Alert "Hello World!" when the user clicks on an element:
+
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+  alert ("Hello World!");
+}//
+------------------------------------------------------------------------------
+SORTING FRUIT
+let fruit = ["🍎", "🍊", "🍎", "🍎", "🍊"]
+let appleShelf = document.getElementById("apple-shelf")
+let orangeShelf = document.getElementById("orange-shelf")
+
+// Create a function that puts the apples onto the appleShelf
+// and the oranges onto the orangeShelf. Use a for loop,
+// a conditional statement, and the textContent property.
+
+function sortFruit() {
+    for (let i = 0; i < fruit.length; i++) {
+        if (fruit[i] === "🍎") {
+            appleShelf.textContent += "🍎"
+        } else if (fruit[i] === "🍊") {
+            orangeShelf.textContent += "🍊"
+        }
+    }
+}
+sortFruit()
+------------------------------------------------------------------------------
