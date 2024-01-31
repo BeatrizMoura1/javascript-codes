@@ -1,0 +1,683 @@
+html:
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
+    <body></body>
+</html>
+java:
+// 1. Create two variables, firstCard and secondCard. 
+// Set their values to a random number between 2-11
+
+// 2. Create a variable, sum, and set it to the sum of the two cards
+
+let firstCard = 6
+let secondCard = 9
+
+let sum = firstCard + secondCard
+
+console.log(sum)
+-----------------------------------------------------------
+java:
+let firstCard = 10
+let secondCard = 11
+let sum = firstCard + secondCard
+
+if (sum < 21) {
+    console.log("Do you want to draw a new card? 🙂")
+} else if (sum === 21) {
+    console.log("Wohoo! You've got Blackjack! 🥳")
+} else if (sum > 21) {
+    console.log("You're out of the game! 😭")
+}
+-----------------------------------------------------------
+test
+// Check if the person is elegible for a birthday card from the King! (100)
+
+let age = 100
+
+// if less than 100    -> "Not elegible"
+// else if exactly 100 -> "Here is your birthday card from the King!"
+// else                -> "Not elegible, you have already gotten one"
+
+if (age < 100) {
+    console.log("Not elegible")
+} else if (age === 100) {
+    console.log("Here is your birthday card from the King!")
+} else {
+    console.log("Not elegible, you have already gotten one")
+}
+-----------------------------------------------------------
+let firstCard = 10
+let secondCard = 12
+let sum = firstCard + secondCard
+
+// Write the conditional according to these rules:
+
+// if less than or equal to 20 -> "Do you want to draw a new card? 🙂"
+// else if exactly 21 -> "Wohoo! You've got Blackjack! 🥳"
+// else -> "You're out of the game! 😭"
+
+if (sum <= 20) {
+    console.log("Do you want to draw a new card? 🙂")
+} else if (sum === 21) {
+    console.log("Wohoo! You've got Blackjack! 🥳")
+} else {
+    console.log("You're out of the game! 😭")
+}
+-----------------------------------------------------------
+let firstCard = 10
+let secondCard = 11
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+// 1. Declare a variable called message and assign its value to an empty string
+let message = ""
+
+// 2. Reassign the message variable to the string we're logging out
+if (sum <= 20) {
+    message = "Do you want to draw a new card? 🙂"
+} else if (sum === 21) {
+    message = "Wohoo! You've got Blackjack! 🥳"
+    hasBlackJack = true
+} else {
+    message = "You're out of the game! 😭"
+    isAlive = false
+}
+
+// 3. Log it out!
+console.log(message)
+-----------------------------------------------------------
+html:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p>Cards:</p>
+        <p>Sum:</p>
+        <script src="index.js"></script>
+    </body>
+</html>
+css:
+/* Complete the CSS styling according to the provided design */
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-image: url("images/table.png");
+    background-size: cover;
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+#message-el {
+    font-style: italic;
+}
+-----------------------------------------------------------
+MAKE THE START BUTTON
+css:
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("images/table.png");
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+#message-el {
+    font-style: italic;
+}
+
+/* 
+3. Style the button according to the provided design
+text color - #016f32
+width      - 150px
+background - goldenrod
+ */
+ 
+button {
+    width: 150px;
+    background-color: goldenrod;
+    color: #016f32;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+}
+html:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p>Cards:</p>
+        <p>Sum:</p>
+        <!-- 1. Create a button that says START GAME. 
+        Make it call a startGame() function when clicked -->
+        <button onclick="startGame()">START GAME</button>
+        <script src="index.js"></script>
+    </body>
+</html>
+java:
+let firstCard = 10
+let secondCard = 4
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+
+// 2. Create a startGame() function. Move the conditional
+// below (line 11-20) inside the body of the function.
+function startGame() {
+    if (sum <= 20) {
+    message = "Do you want to draw a new card? 🙂"
+    } else if (sum === 21) {
+        message = "Wohoo! You've got Blackjack! 🥳"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game! 😭"
+        isAlive = false
+    }
+    console.log(message)
+    }
+-----------------------------------------------------------
+DISPLAY THE MESSAGE
+html:
+<p id="message-el">Want to play a round?</p>
+java:
+let firstCard = 10
+let secondCard = 4
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+
+// 1. Store the message-el paragraph in a variable called messageEl
+
+let messageEl = document.getElementById("message-el")
+
+function startGame() {
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    // 2. Display the message in the messageEl using messageEl.textContent
+    messageEl.textContent = message
+}
+-----------------------------------------------------------
+DISPLAY THE SUM
+html:
+<!-- 1. Give the sum paragraph and id of sum-el -->
+        <p id="sum-el">Sum:</p>
+java:
+// 2. Store the sum paragraph in a variable called sumEl
+let sumEl = document.getElementById("sum-el")
+function startGame() {
+    // 3. Render the sum on the page using this format -> "Sum: 14"
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+    sumEl.textContent += ' ' + sum
+}
+-----------------------------------------------------------
+DISPLAY THE CARDS
+html:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <!-- 1. Give the cards paragraph and id of cards-el -->
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+        <button onclick="startGame()">START GAME</button>
+        <script src="index.js"></script>
+    </body>
+</html>
+java:
+let firstCard = 10
+let secondCard = 4
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+// 2. Store the cards paragraph in a variable called cardsEl
+let cardsEl = document.getElementById("cards-el")
+
+function startGame() {
+    // 3. Render the cars on the page using this format -> "Cards: 10 4"
+    sumEl.textContent = "Sum: " + sum
+    cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+}
+-----------------------------------------------------------
+NEW CARD BUTTON
+css:
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("images/table.png");
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+#message-el {
+    font-style: italic;
+}
+/* 3. Make sure that the two buttons have some space between
+each other when they are rendered out vertically */
+button {
+    color: #016f32;
+    width: 150px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+html:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+        <button onclick="startGame()">START GAME</button>
+        <button onclick="newCard()">NEW CARD</button>
+        <!-- 1. Create a NEW CARD button, make it run newCard() on click -->
+        <script src="index.js"></script>
+    </body>
+</html>
+java:
+let firstCard = 10
+let secondCard = 4
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
+
+function startGame() {
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    sumEl.textContent = "Sum: " + sum
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+}
+
+// 2. Create a function newCard() that logs out "Drawing a new card from the deck!"
+
+function newCard() {
+    messageEl.textContent = "Drawing a new card from the deck!"
+}
+-----------------------------------------------------------
+practice
+// Create an array that describes yourself. Use the three primitive data types you've learned
+// It should contain your name (string), your age (number), and whether you like pizza (boolean)
+let myName = "Bia"
+let myAge = 19
+let myChoice = true
+let myArray = [myName, myAge, myChoice]
+console.log(myArray)
+-----------------------------------------------------------
+add cards to array -> let cards = [4, 7]
+cards.push(6) -> [4, 7, 6]
+remove the last item in an array -> messages.pop(2)
+console.log(messages)
+-----------------------------------------------------------
+note:
+html:
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="greeting-el"></p>
+        <script src="index.js"></script>
+    </body>
+</html>
+java:
+let sentence = ["Hello ", "my ", "name ", "is ", "Per"] 
+let greetingEl = document.getElementById("greeting-el")
+
+// Render the sentence in the greetingEl paragraph using a for loop and .textContent
+
+for (let i = 0; i < sentence.length; i += 1) {
+    greetingEl.textContent += sentence[i]
+}
+-----------------------------------------------------------
+java:
+let firstCard = 10
+let secondCard = 4
+let cards = [firstCard, secondCard]
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
+
+function startGame() {
+    renderGame()
+}
+
+function renderGame() {
+    cardsEl.textContent = "Cards: "
+    // Create a for loop that renders out all the cards instead of just two
+    
+    for(let i = 0; i < cards.length; i += 1) {
+        cardsEl.textContent += cards[i] + ' '
+    }
+    sumEl.textContent = "Sum: " + sum
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+}
+
+
+function newCard() {
+    let card = 6
+    sum += card
+    // Push the card to the cards array
+    cards.push(card)
+    console.log(cards)
+    renderGame()
+}
+-------------------------------------------------------
+note: return values
+let player1Time = 102
+let player2Time = 107
+
+// cmd+d - ctrl+d
+function getFastestRaceTime() {
+    if (player1Time < player2Time) {
+        return player1Time
+    } else if (player2Time < player1Time) {
+        return player2Time
+    } else {
+        return player1Time
+    }
+}
+-------------------------------------------------------
+GET RANDOM VALUES!!
+let randomNumber = Math.random()
+
+console.log(randomNumber) (numbers between 0 and 0.999)
+Math.random() * 6 (numbers between 0 and 5.999)
+-------------------------------------------------------
+let flooredNumber = Math.floor(3.45632)
+
+console.log(flooredNumber) (return the floor of the number 3.xxx always 3)
+-------------------------------------------------------
+// Try to modify the expression so that we get a range from 1 to 6
+let randomNumber = Math.floor( Math.random() * 6 + 1)
+
+console.log(randomNumber)
+-------------------------------------------------------
+// Create a function, rollDice(), that returns a random number between 1 and 6
+
+function rollDice() {
+    let randomNumber = (Math.floor(Math.random() * 6 + 1))
+    return randomNumber
+}
+let dice = rollDice()
+console.log(dice)
+-------------------------------------------------------
+full html:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+        <button onclick="startGame()">START GAME</button>
+        <button onclick="newCard()">NEW CARD</button>
+        <script src="index.js"></script>
+    </body>
+</html>
+full java:
+let cards = []
+let sum = 0
+let hasBlackJack = false
+let isAlive = false
+let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
+
+function getRandomCard() {
+    let randomNumer = Math.floor( Math.random()*13 ) + 1
+    if (randomNumer > 10) {
+        return 10
+    } else if (randomNumer === 1) {
+        return 11
+    } else {
+        return randomNumer
+    }
+}
+
+function startGame() {
+    isAlive = true
+    // Generate two random numbes
+    // Re-assign the cards and sum variables so that the game can start
+    let firstCard = Math.floor(Math.random() * 13) + 1
+    let secondCard = Math.floor(Math.random() * 13) + 1
+    sum = firstCard + secondCard
+    cards = [firstCard, secondCard]
+    renderGame()
+}
+function startGame() {
+    renderGame()
+}
+
+function renderGame() {
+    cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+    }
+    
+    sumEl.textContent = "Sum: " + sum
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+}
+
+function newCard() {
+    if (isAlive === true && hasBlackJack === false) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()        
+    }
+}
+---------------------------------------------------------
+&& operator
+let hasSolvedChallenge = false
+let hasHintsLeft = false
+// Create an if statement that checks that both variables are false.
+// If so, run the showSolution() function
+if (hasSolvedChallenge === false && hasHintsLeft === true) {
+    showSolution()
+}
+function showSolution() {
+    console.log("Showing the solution....")
+}
+---------------------------------------------------------
+|| operator
+// Create two boolean variables, likesDocumentaries and likesStartups
+// Use an OR statement (||) to call recommendMovie() if either of those variables are true
+let likesDocumentaries = true
+let likesStartups = false
+
+if (likesDocumentaries === true || likesStartups === true) {
+    recommendMovie()
+}
+
+function recommendMovie() {
+    console.log("Hey, check out this new film we think you will like!")
+}
+---------------------------------------------------------
+OBJECTS
+// Objects - store data in-depth - composite / complex data type
+// key-value pairs
+
+let course = {
+    title: "Learn CSS Grid for free",
+    lessons: 16,
+    creator: "Per Harald Borgen",
+    length: 63,
+    level: 2,
+    isFree: true,
+    tags: ["html", "css"]
+}
+
+
+console.log( course.tags )
+console.log( course["tags"] )
+---------------------------------------------------------
+methods are functions attached to objects
+---------------------------------------------------------
+final css:
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("images/table.png");
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+#message-el {
+    font-style: italic;
+}
+
+/* 3. Make sure that the two buttons have some space between
+each other when they are rendered out vertically */
+button {
+    color: #016f32;
+    width: 150px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+final html:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+        <button onclick="startGame()">START GAME</button>
+        <button onclick="newCard()">NEW CARD</button>
+        <p id="player-el"></p>
+        <script src="index.js"></script>
+    </body>
+</html>
+final java:
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+        <button onclick="startGame()">START GAME</button>
+        <button onclick="newCard()">NEW CARD</button>
+        <p id="player-el"></p>
+        <script src="index.js"></script>
+    </body>
+</html>
